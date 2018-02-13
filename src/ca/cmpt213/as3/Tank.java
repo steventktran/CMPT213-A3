@@ -1,6 +1,7 @@
 package ca.cmpt213.as3;
 
 public class Tank {
+    private Tetromino tank;
     private int health;
     private int damage;
     private boolean isDestroyed;
