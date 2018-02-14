@@ -21,11 +21,11 @@ public class Tank {
     }
     public void createTank(Unit[][] board, int x, int y) {
       List possibleSpaces = new ArrayList<Unit>();
-      if( + 1 <= board.size) {
-
+      
       int numUnits = 0;
       int currentX = x;
       int currentY = y;
+
       while(numUnits < 4) {
         tetromino[numUnits] = board[currentX][currentY];
         board[currentX][currentY].setOccupied();
