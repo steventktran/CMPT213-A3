@@ -18,7 +18,7 @@ public class Tank {
 
     public void takeDamage() {
         health--;
-        damage = Math.ceil(damage/DAMAGE_DROPOFF_FACTOR); // 20/4 = 5, 5/4 = 2, 2/4 = 1
+        damage = (int) Math.ceil(damage/DAMAGE_DROPOFF_FACTOR); // 20/4 = 5, 5/4 = 2, 2/4 = 1
         if(health <= 0) {
           isDestroyed = true;
         }

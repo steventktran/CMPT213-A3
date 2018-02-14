@@ -21,4 +21,11 @@ public class Fortress {
     }
 
     //function here that returns true if fortress is destroyed.
+    public boolean isFortressDestroyed() {
+        if (health == 0) {
+            return true;
+        }
+
+        return false;
+    }
 }
