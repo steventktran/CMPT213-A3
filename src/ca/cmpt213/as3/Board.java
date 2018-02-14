@@ -1,31 +1,83 @@
 package ca.cmpt213.as3;
 
+import java.util.Random;
+
 public class Board {
     Unit[][] board;
     Fortress fortress;
-    Tank[] tank;
+    Tank[] tanks;
     private int numTanksAlive;
 
     public Board() {
         board = new Unit[10][10];
-        tank = new Tank[5];
+        tanks = new Tank[5];
         numTanksAlive = 5;
+
+        boolean isOccupied = false;
+        boolean isVisible = false;
+
+        for (Unit[] unitRow : board) {
+            for (Unit unit : unitRow) {
+                unit = new Unit(isOccupied, isVisible);
+            }
+        }
+
+        for (Tank indivTank : tanks) {
+            Random randX = new Random(System.currentTimeMillis());
+            int x = randX.nextInt() % 10;
+            Random randY = new Random(System.currentTimeMillis());
+            int y = randY.nextInt() % 10;
+
+            indivTank = new Tank(board, x, y);
+        }
     }
 
     public Board(int numTanks) {
         board = new Unit[10][10];
-        tank = new Tank[numTanks];
+        tanks = new Tank[numTanks];
         numTanksAlive = numTanks;
+
+        boolean isOccupied = false;
+        boolean isVisible = false;
+
+        for (Unit[] unitRow : board) {
+            for (Unit unit : unitRow) {
+                unit = new Unit(isOccupied, isVisible);
+            }
+        }
+
+        for (Tank indivTank : tanks) {
+            Random randX = new Random(System.currentTimeMillis());
+            int x = randX.nextInt() % 10;
+            Random randY = new Random(System.currentTimeMillis());
+            int y = randY.nextInt() % 10;
+
+            indivTank = new Tank(board, x, y);
+        }
     }
 
     public Board(int numTanks, String cheat) {
         board = new Unit[10][10];
-        tank = new Tank[numTanks];
+        tanks = new Tank[numTanks];
         numTanksAlive = numTanks;
-    }
 
-    public void tankPlacementAlgorithm() {
-        //tank placement algorithm
+        boolean isOccupied = false;
+        boolean isVisible = true;
+
+        for (Unit[] unitRow : board) {
+            for (Unit unit : unitRow) {
+                unit = new Unit(isOccupied, isVisible);
+            }
+        }
+
+        for (Tank indivTank : tanks) {
+            Random randX = new Random(System.currentTimeMillis());
+            int x = randX.nextInt() % 10;
+            Random randY = new Random(System.currentTimeMillis());
+            int y = randY.nextInt() % 10;
+
+            indivTank = new Tank(board, x, y);
+        }
     }
 
     public void takeTurn(int row, int col) {
@@ -43,7 +95,7 @@ public class Board {
             }
         } else {
             //all tanks fire at fortress.
-            for (Tank eachTank : tank) {
+            for (Tank eachTank : tanks) {
                 int damage = eachTank.dealDamage();
                 fortress.takeDamage(damage);
                 //check if game is over.

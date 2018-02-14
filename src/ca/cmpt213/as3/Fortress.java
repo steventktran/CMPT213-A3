@@ -13,6 +13,13 @@ public class Fortress {
 
     public void fire(Unit coordinate) {
         //fire at coordinate
+        if (coordinate.getVisibility() == false) {
+            coordinate.reveal();
+
+//            if (coordinate.getOccupier() == true) {
+//
+//            }
+        }
     }
 
     public void takeDamage(int damage) {
