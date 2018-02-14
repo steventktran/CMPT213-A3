@@ -1,28 +1,35 @@
 package ca.cmpt213.as3;
 
 public class Tank {
-    private Tetromino tank;
+    private Unit[] tetromino;
     private int health;
     private int damage;
     private boolean isDestroyed;
 
-    public Tank() {
-        health = 4;
-        damage = 20;
-        isDestroyed = false;
+    private static final int DAMAGE_DROPOFF_FACTOR = 4;
+
+    public Tank(Unit[][] board) {
+      health = 4;
+      damage = 20;
+      isDestroyed = false;
+      tetromino = new Unit[4];
+
     }
 
     public void takeDamage() {
-        //takeDamage:
-        //if health is greater than 0, health--
-        //depending on health, reduce damage
-        //if health is 0, isDestroyed is true
+        health--;
+        damage = Math.ceil(damage/DAMAGE_DROPOFF_FACTOR); // 20/4 = 5, 5/4 = 2, 2/4 = 1
+        if(health <= 0) {
+          isDestroyed = true;
+        }
     }
 
     public int dealDamage() {
-        //dealDamage
-        //if tank isn't destroyed and health is greater than 0, return destroyed.
+      if(isDestroyed) {
+        return 0;
+      } else {
         return damage;
+      }
     }
 
     public void remove() {
