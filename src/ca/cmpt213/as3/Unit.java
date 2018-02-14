@@ -20,4 +20,8 @@ public class Unit {
     public boolean getVisibility() {
         return isVisibile;
     }
+
+    public void setOccupied() {
+      isOccupied = true;
+    }
 }

@@ -8,6 +8,10 @@ public class Board {
     Tank[] tanks;
     private int numTanksAlive;
 
+    private static final int SIZE_OF_TETROMINO = 4;
+
+    private static final int ROWS = 10;
+    private static final int COLS = 10;
     public Board() {
         board = new Unit[10][10];
         tanks = new Tank[5];
@@ -112,8 +116,33 @@ public class Board {
 
     public String getBoardState() {
         String boardState = "";
-        //turn Board state into string
+
+        boardState += " A B C D E F G H I J K\n";
+        for(int i = 0; i < ROWS; i++) {
+          boardState += i;
+          for(int j = 0; j < COLS; j++) {
+            if(board[i][j].getOccupier() && board[i][j].getVisibility()) {
+              boardState += "X ";
+            } else if(!board[i][j].getOccupier() && board[i][j].getVisibility()) {
+              boardState += "  ";
+            } else {
+              boardState += ". ";
+            }
+          }
+          boardState += "\n";
+        }
         return boardState;
+    }
+
+    public Tank getOwner(int x, int y) {
+      for(Tank tank: tanks) {
+        for(int i = 0; i < SIZE_OF_TETROMINO; i++) {
+          if(tank.getUnit(i) == board[x][y]) {
+            return tank;
+          }
+        }
+      }
+      return null;
     }
 
     public boolean isGameOver() {
