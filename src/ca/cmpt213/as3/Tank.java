@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Tank {
-    private Tetromino tank;
+    private Unit[] tetromino;
     private int health;
     private int damage;
     private boolean isDestroyed;
@@ -21,7 +21,7 @@ public class Tank {
     }
     public void createTank(Unit[][] board, int x, int y) {
       List possibleSpaces = new ArrayList<Unit>();
-      
+
       int numUnits = 0;
       int currentX = x;
       int currentY = y;
@@ -40,6 +40,12 @@ public class Tank {
         if(currentY - 1 >= 0) {
           possibleSpaces.add(board[currentX][currentY - 1]);
         }
+      }
+    }
+
+    public Unit getUnit(int i) {
+      if(i > 0 && i < tetromino.size) {
+        return tetromino[i];
       }
     }
 
