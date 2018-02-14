@@ -13,7 +13,7 @@ public class Board {
     private static final int ROWS = 10;
     private static final int COLS = 10;
     public Board() {
-        board = new Unit[10][10];
+        board = new Unit[ROWS][COLS];
         tanks = new Tank[5];
         numTanksAlive = 5;
 
@@ -37,7 +37,7 @@ public class Board {
     }
 
     public Board(int numTanks) {
-        board = new Unit[10][10];
+        board = new Unit[ROWS][COLS];
         tanks = new Tank[numTanks];
         numTanksAlive = numTanks;
 
@@ -61,7 +61,7 @@ public class Board {
     }
 
     public Board(int numTanks, String cheat) {
-        board = new Unit[10][10];
+        board = new Unit[ROWS][COLS];
         tanks = new Tank[numTanks];
         numTanksAlive = numTanks;
 
