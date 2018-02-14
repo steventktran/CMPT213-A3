@@ -66,8 +66,4 @@ public class Tank {
         return damage;
       }
     }
-
-    public void remove() {
-        //remove
-    }
 }
