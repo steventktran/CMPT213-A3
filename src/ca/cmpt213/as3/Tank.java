@@ -19,15 +19,15 @@ public class Tank {
       createTetromino(board, x, y);
     }
     public void createTetromino(Unit[][] board, int x, int y) {
-      List possibleSpaces = new ArrayList<Unit>();
+      List<Unit> possibleSpaces = new ArrayList<>();
       int numUnits = 0;
       int currentX = x;
       int currentY = y;
       Unit currentUnit;
       int[] indexes = new int[2];
 
-      posssibleSpaces.add(board[x][y]);
-      tetromino[0] = possibleSpaces.at(0);
+      possibleSpaces.add(board[x][y]);
+      tetromino[0] = possibleSpaces.get(0);
       board[x][y].setOccupied();
       possibleSpaces.remove(0);
       numUnits++;
@@ -46,11 +46,11 @@ public class Tank {
           possibleSpaces.add(board[currentX][currentY - 1]);
         }
 
-        Unit currentUnit = possibleSpaces.at(Math.random()*possibleSpaces.size());
+        currentUnit = possibleSpaces.get((int) Math.random()*possibleSpaces.size());
         tetromino[numUnits] = currentUnit;
         indexes = getIndexOnBoard(board, currentUnit);
-        currentX = index[0];
-        currentY = index[1];
+        currentX = indexes[0];
+        currentY = indexes[1];
         board[currentX][currentY].setOccupied();
         numUnits++;
         possibleSpaces.remove(currentUnit);
@@ -59,7 +59,7 @@ public class Tank {
 
     public int[] getIndexOnBoard(Unit[][] board, Unit searchTarget) {
       int[] indexes = new int[2];
-      for(int i = 0; i < board.length; i++ {
+      for(int i = 0; i < board.length; i++) {
         for(int j = 0; j < board[i].length; j++) {
           if(searchTarget == board[i][j]) {
             indexes[0] = i;
