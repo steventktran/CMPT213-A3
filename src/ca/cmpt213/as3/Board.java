@@ -7,15 +7,19 @@ public class Board {
     Fortress fortress;
     Tank[] tanks;
     private int numTanksAlive;
+    private boolean isCheat;
 
     private static final int SIZE_OF_TETROMINO = 4;
 
     private static final int ROWS = 10;
     private static final int COLS = 10;
+
+
     public Board() {
         board = new Unit[ROWS][COLS];
         tanks = new Tank[5];
         numTanksAlive = 5;
+        isCheat = false;
 
         boolean isOccupied = false;
         boolean isVisible = false;
@@ -40,6 +44,7 @@ public class Board {
         board = new Unit[ROWS][COLS];
         tanks = new Tank[numTanks];
         numTanksAlive = numTanks;
+        isCheat = false;
 
         boolean isOccupied = false;
         boolean isVisible = false;
@@ -64,6 +69,7 @@ public class Board {
         board = new Unit[ROWS][COLS];
         tanks = new Tank[numTanks];
         numTanksAlive = numTanks;
+        isCheat = true;
 
         boolean isOccupied = false;
         boolean isVisible = true;
@@ -121,9 +127,9 @@ public class Board {
         for(int i = 0; i < ROWS; i++) {
           boardState += i;
           for(int j = 0; j < COLS; j++) {
-            if(board[i][j].getOccupier() && board[i][j].getVisibility()) {
+            if(board[i][j].getOccupier() && (board[i][j].getVisibility() || isCheat)) {
               boardState += "X ";
-            } else if(!board[i][j].getOccupier() && board[i][j].getVisibility()) {
+            } else if(!board[i][j].getOccupier() && (board[i][j].getVisibility() || isCheat)) {
               boardState += "  ";
             } else {
               boardState += ". ";
