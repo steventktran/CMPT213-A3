@@ -16,21 +16,25 @@ public class Tank {
       damage = 20;
       isDestroyed = false;
       tetromino = new Unit[4];
-
-
+      createTetromino(board, x, y);
     }
-    public void createTank(Unit[][] board, int x, int y) {
+    public void createTetromino(Unit[][] board, int x, int y) {
       List possibleSpaces = new ArrayList<Unit>();
-
       int numUnits = 0;
       int currentX = x;
       int currentY = y;
+      Unit currentUnit;
+      int[] indexes = new int[2];
+
+      posssibleSpaces.add(board[x][y]);
+      tetromino[0] = possibleSpaces.at(0);
+      board[x][y].setOccupied();
+      possibleSpaces.remove(0);
+      numUnits++;
 
       while(numUnits < 4) {
-        tetromino[numUnits] = board[currentX][currentY];
-        board[currentX][currentY].setOccupied();
         if(currentX + 1 <= board.length) {
-            possibleSpaces.add(board[currentX + 1][currentY]);
+          possibleSpaces.add(board[currentX + 1][currentY]);
         }
         if(currentX - 1 >= 0) {
           possibleSpaces.add(board[currentX - 1][currentY]);
@@ -41,7 +45,29 @@ public class Tank {
         if(currentY - 1 >= 0) {
           possibleSpaces.add(board[currentX][currentY - 1]);
         }
+
+        Unit currentUnit = possibleSpaces.at(Math.random()*possibleSpaces.size());
+        tetromino[numUnits] = currentUnit;
+        indexes = getIndexOnBoard(board, currentUnit);
+        currentX = index[0];
+        currentY = index[1];
+        board[currentX][currentY].setOccupied();
+        numUnits++;
+        possibleSpaces.remove(currentUnit);
       }
+    }
+
+    public int[] getIndexOnBoard(Unit[][] board, Unit searchTarget) {
+      int[] indexes = new int[2];
+      for(int i = 0; i < board.length; i++ {
+        for(int j = 0; j < board[i].length; j++) {
+          if(searchTarget == board[i][j]) {
+            indexes[0] = i;
+            indexes[1] = j;
+          }
+        }
+      }
+      return indexes;
     }
 
     public Unit getUnit(int i) {
@@ -53,9 +79,10 @@ public class Tank {
 
     public void takeDamage() {
         health--;
-        damage = (int) Math.ceil(damage/DAMAGE_DROPOFF_FACTOR); // 20/4 = 5, 5/4 = 2, 2/4 = 1
+        damage = (int) Math.ceil(damage/DAMAGE_DROPOFF_FACTOR); // 20/4 = 5, 5/4 = 2, 2/4 = 1,
         if(health <= 0) {
           isDestroyed = true;
+          damage = 0;
         }
     }
 
