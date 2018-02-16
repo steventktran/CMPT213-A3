@@ -13,21 +13,29 @@ public class Fortress {
         return health;
     }
 
-    public void fire(Unit coordinate) {
+    public boolean fire(Unit coordinate) {
+        boolean hits = false;
+
         //fire at coordinate
         if (coordinate.getVisibility() == false) {
             coordinate.reveal();
-
-//            if (coordinate.getOccupier() == true) {
-//
-//            }
+            if (coordinate.getOccupier()) {
+                hits = true;
+            }
         }
+
+        return hits;
     }
 
     public void takeDamage(int damage) {
         //if health is greater than 0, health - damage;
         //if resulting health is less than 0, just set to 0 and fortress is destroyed.
-        health -= damage;
+        if (health >= damage) {
+            health -= damage;
+        } else {
+            health = 0;
+        }
+
         if (health <= 0) {
           isDestroyed = true;
         }
