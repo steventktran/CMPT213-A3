@@ -8,7 +8,6 @@ public class Board {
     Tank[] tanks;
     private int numTanksAlive;
     private boolean isCheat;
-
     private static final int SIZE_OF_TETROMINO = 4;
 
     private static final int ROWS = 10;
@@ -32,10 +31,11 @@ public class Board {
 
         for (Tank indivTank : tanks) {
             Random randX = new Random(System.currentTimeMillis());
-            int x = randX.nextInt() % 10;
+            int x = Math.abs(randX.nextInt() % 10);
             Random randY = new Random(System.currentTimeMillis());
-            int y = randY.nextInt() % 10;
-
+            int y = Math.abs(randY.nextInt() % 10);
+            System.out.println("x = " + x);
+            System.out.println("y = " + y);
             indivTank = new Tank(board, x, y);
         }
     }
@@ -88,6 +88,10 @@ public class Board {
 
             indivTank = new Tank(board, x, y);
         }
+    }
+
+    public boolean getIsCheat() {
+        return isCheat;
     }
 
     public void takeTurn(int row, int col) {

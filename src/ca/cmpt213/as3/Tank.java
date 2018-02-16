@@ -26,7 +26,7 @@ public class Tank {
       Unit currentUnit;
       int[] indexes = new int[2];
 
-      possibleSpaces.add(board[x][y]);
+      possibleSpaces.add(board[currentX][currentY]);
       tetromino[0] = possibleSpaces.get(0);
       board[x][y].setOccupied();
       possibleSpaces.remove(0);
