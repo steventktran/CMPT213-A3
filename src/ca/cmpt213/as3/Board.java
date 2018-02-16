@@ -96,8 +96,7 @@ public class Board {
         Unit destination = board[row][col];
         //fortress fires at coordinate
         if (fortress.fire(destination) == true) {
-            Tank target = getOwner(row, col);
-            target.dealDamage();
+            tanks[getTankIndex(row, col)].dealDamage();
         }
         //check if game is over.
         if (isGameOver() ==  true) {
