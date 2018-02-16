@@ -70,6 +70,15 @@ public class Tank {
       return indexes;
     }
 
+    public boolean containsUnit(Unit searchTarget) {
+        for(Unit unit: tetromino) {
+            if(unit == searchTarget) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     public Unit getUnit(int i) {
       if(i > 0 && i < tetromino.length) {
         return tetromino[i];

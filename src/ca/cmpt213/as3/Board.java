@@ -124,31 +124,48 @@ public class Board {
         String boardState = "";
 
         boardState += " A B C D E F G H I J K\n";
-        for(int i = 0; i < ROWS; i++) {
-          boardState += i;
-          for(int j = 0; j < COLS; j++) {
-            if(board[i][j].getOccupier() && (board[i][j].getVisibility() || isCheat)) {
-              boardState += "X ";
-            } else if(!board[i][j].getOccupier() && (board[i][j].getVisibility() || isCheat)) {
-              boardState += "  ";
-            } else {
-              boardState += ". ";
+        for (int i = 0; i < ROWS; i++) {
+            boardState += i;
+            for (int j = 0; j < COLS; j++) {
+                if (board[i][j].getOccupier() && board[i][j].getVisibility()) {
+                    boardState += "X ";
+                } else if (!board[i][j].getOccupier() && board[i][j].getVisibility()) {
+                    boardState += "  ";
+                } else {
+                    boardState += ". ";
+                }
             }
-          }
-          boardState += "\n";
+            boardState += "\n";
         }
         return boardState;
     }
 
-    public Tank getOwner(int x, int y) {
-      for(Tank tank: tanks) {
-        for(int i = 0; i < SIZE_OF_TETROMINO; i++) {
-          if(tank.getUnit(i) == board[x][y]) {
-            return tank;
-          }
+    public String getFinalBoardState() {
+        String boardState = "";
+
+        boardState += " A B C D E F G H I J K\n";
+        for (int i = 0; i < ROWS; i++) {
+            boardState += i;
+            for (int j = 0; j < COLS; j++) {
+                int tankIndex = getTankIndex(i, j);
+                if(tankIndex != -1) {
+                    boardState += ("A" + tankIndex) + " ";
+                } else {
+                    boardState += ". ";
+                }
+            }
+            boardState += "\n";
         }
-      }
-      return null;
+        return boardState;
+    }
+
+    public int getTankIndex(int x, int y) {
+        for(int i = 0; i < tanks.length; i++) {
+            if(tanks[i].containsUnit(board[x][y])) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     public boolean isGameOver() {
