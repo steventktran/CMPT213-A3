@@ -33,19 +33,22 @@ public class Tank {
       numUnits++;
 
       while(numUnits < 4) {
-        if(currentX + 1 <= board.length) {
+        if(currentX + 1 < board.length && !board[currentX + 1][currentY].getOccupier()) {
           possibleSpaces.add(board[currentX + 1][currentY]);
         }
-        if(currentX - 1 >= 0) {
+        if(currentX - 1 > 0 && !board[currentX - 1][currentY].getOccupier()) {
           possibleSpaces.add(board[currentX - 1][currentY]);
         }
-        if(currentY + 1 <= board[0].length) {
+        if(currentY + 1 < board[0].length && !board[currentX][currentY + 1].getOccupier()) {
           possibleSpaces.add(board[currentX][currentY + 1]);
         }
-        if(currentY - 1 >= 0) {
+        if(currentY - 1 > 0 && !board[currentX][currentY - 1].getOccupier()) {
           possibleSpaces.add(board[currentX][currentY - 1]);
         }
 
+        if(possibleSpaces.size() == 0) {
+            new Exception("Unable to create tetromino.");
+        }
         currentUnit = possibleSpaces.get((int) Math.random() * (possibleSpaces.size() - 1));
         tetromino[numUnits] = currentUnit;
         indexes = getIndexOnBoard(board, currentUnit);

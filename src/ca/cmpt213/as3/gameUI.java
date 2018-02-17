@@ -36,7 +36,7 @@ public class gameUI {
 
         while(!board.isGameOver()) {
             input = scan.nextLine().toLowerCase().trim();
-            while(input.length() > 3) {
+            while(input.length() > 3 || input.length() <= 1) {
                 System.out.println("Invalid input. Please enter a coordinate in the format 'A1', case-insensitive.\n");
                 input = scan.nextLine().toLowerCase().trim();
             }

@@ -8,7 +8,6 @@ public class Board {
     Tank[] tanks;
     private int numTanksAlive;
     private boolean isCheat;
-    private static final int SIZE_OF_TETROMINO = 4;
 
     private static final int ROWS = 10;
     private static final int COLS = 10;
@@ -31,26 +30,18 @@ public class Board {
         }
 
         for(int i = 0; i < tanks.length; i++) {
-            int x = (int) Math.random() * (ROWS - 1);
-            int y = (int) Math.random() * (COLS - 1);
+            int x = (int) (Math.random() * (ROWS - 1));
+            int y = (int) (Math.random() * (COLS - 1));
+
+            while(board[x][y].getOccupier()) {
+                x = (int) (Math.random() * (ROWS - 1));
+                y = (int) (Math.random() * (COLS - 1));
+            }
+
+            System.out.println("x: " + x + ", y: " + y + "\n");
             tanks[i] = new Tank(board, x, y);
             System.out.println(getBoardState());
         }
-        /*
-        for (Tank indivTank : tanks) {
-            Random randX = new Random(System.currentTimeMillis());
-            int x = Math.abs(randX.nextInt() % 10);
-            Random randY = new Random(System.currentTimeMillis());
-            int y = Math.abs(randY.nextInt() % 10);
-            System.out.println("x = " + x);
-            System.out.println("y = " + y);
-            int x = (int) Math.random() * (ROWS - 1);
-            int y = (int) Math.random() * (COLS - 1);
-            indivTank = new Tank(board, x, y);
-            System.out.println(getBoardState());
-        }*/
-
-
     }
 
     public Board(int numTanks) {
@@ -58,23 +49,22 @@ public class Board {
         tanks = new Tank[numTanks];
         numTanksAlive = numTanks;
         isCheat = false;
+        fortress = new Fortress();
 
         boolean isOccupied = false;
         boolean isVisible = false;
 
-        for (Unit[] unitRow : board) {
-            for (Unit unit : unitRow) {
-                unit = new Unit(isOccupied, isVisible);
+        for(int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
+                board[i][j] = new Unit(isOccupied, isVisible);
             }
         }
 
-        for (Tank indivTank : tanks) {
-            Random randX = new Random(System.currentTimeMillis());
-            int x = randX.nextInt() % 10;
-            Random randY = new Random(System.currentTimeMillis());
-            int y = randY.nextInt() % 10;
-
-            indivTank = new Tank(board, x, y);
+        for(int i = 0; i < tanks.length; i++) {
+            int x = (int) Math.random() * (ROWS - 1);
+            int y = (int) Math.random() * (COLS - 1);
+            tanks[i] = new Tank(board, x, y);
+            System.out.println(getBoardState());
         }
     }
 
@@ -83,23 +73,22 @@ public class Board {
         tanks = new Tank[numTanks];
         numTanksAlive = numTanks;
         isCheat = true;
+        fortress = new Fortress();
 
         boolean isOccupied = false;
-        boolean isVisible = true;
+        boolean isVisible = false;
 
-        for (Unit[] unitRow : board) {
-            for (Unit unit : unitRow) {
-                unit = new Unit(isOccupied, isVisible);
+        for(int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
+                board[i][j] = new Unit(isOccupied, isVisible);
             }
         }
 
-        for (Tank indivTank : tanks) {
-            Random randX = new Random(System.currentTimeMillis());
-            int x = randX.nextInt() % 10;
-            Random randY = new Random(System.currentTimeMillis());
-            int y = randY.nextInt() % 10;
-
-            indivTank = new Tank(board, x, y);
+        for(int i = 0; i < tanks.length; i++) {
+            int x = (int) Math.random() * (ROWS - 1);
+            int y = (int) Math.random() * (COLS - 1);
+            tanks[i] = new Tank(board, x, y);
+            System.out.println(getBoardState());
         }
     }
 
