@@ -13,6 +13,7 @@ public class gameUI {
         String input;
         int x;
         int y;
+        int[] tankDamages;
 
         if (args.length > 2) {
             System.out.println("Invalid number of Arguments.");
@@ -34,18 +35,47 @@ public class gameUI {
             System.out.println(board.getFinalBoardState());
         }
 
+        //FOR TESTING PURPOSES ONLY REMOVE ONCE TESTING IS OVER
+        System.out.println(board.getFinalBoardState());
+
         while(!board.isGameOver()) {
+            System.out.println(board.getBoardState());
+            System.out.println("Fortress Structure Left: " + board.getFortressHealth());
+            System.out.print("Enter your move: ");
             input = scan.nextLine().toLowerCase().trim();
-            while(input.length() > 3 || input.length() <= 1) {
-                System.out.println("Invalid input. Please enter a coordinate in the format 'A1', case-insensitive.\n");
+            while(input.length() == 3 && input.charAt(2) != '0') {
+                System.out.println("Out of bounds. Please enter an x-coordinate between 0 and 10.");
                 input = scan.nextLine().toLowerCase().trim();
             }
+            while(input.length() <= 1 || input.charAt(0) < 'a' || input.charAt(0) > 'j') {
+                System.out.println("Out of bounds. Please enter a y-coordinate between A and J, case-insensitive.");
+                input = scan.nextLine().toLowerCase().trim();
+            }
+            while(input.length() > 3 || input.charAt(1) < '1' || input.charAt(1) > '9') {
+                System.out.println("Invalid input. Please enter a coordinate in the format 'A1', case-insensitive.");
+                input = scan.nextLine().toLowerCase().trim();
+            }
+
             x = (int)input.charAt(0) - 'a';
             y = parseInt(input.substring(1)) - 1;
 
-            System.out.println("x: " + x + "y: " + y + "\n");
             board.takeTurn(x, y);
-            System.out.println(board.getBoardState());
+
+            if(board.getHitStatus(x, y)) {
+                System.out.println("HIT!");
+            } else {
+                System.out.println("Miss.");
+            }
+
+            tankDamages = board.getTankDamages();
+            for(int i = 0; i < board.getNumTanks(); i++) {
+                if(tankDamages[i] != 0) {
+                    System.out.println("Alive Tanks #" + (i + 1) + " of " + board.getNumTanks() + " hit you for " + tankDamages[i] + "!");
+                }
+            }
+
+            System.out.println();
+
         }
 
         System.out.println(board.getFinalBoardState());

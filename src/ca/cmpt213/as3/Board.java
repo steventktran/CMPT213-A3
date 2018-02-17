@@ -3,9 +3,9 @@ package ca.cmpt213.as3;
 import java.util.Random;
 
 public class Board {
-    Unit[][] board;
-    Fortress fortress;
-    Tank[] tanks;
+    private Unit[][] board;
+    private Fortress fortress;
+    private Tank[] tanks;
     private int numTanksAlive;
     private boolean isCheat;
 
@@ -22,6 +22,8 @@ public class Board {
 
         boolean isOccupied = false;
         boolean isVisible = false;
+        int x;
+        int y;
 
         for(int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
@@ -30,17 +32,15 @@ public class Board {
         }
 
         for(int i = 0; i < tanks.length; i++) {
-            int x = (int) (Math.random() * (ROWS - 1));
-            int y = (int) (Math.random() * (COLS - 1));
+            x = (int) (Math.random() * (ROWS - 1));
+            y = (int) (Math.random() * (COLS - 1));
 
             while(board[x][y].getOccupier()) {
                 x = (int) (Math.random() * (ROWS - 1));
                 y = (int) (Math.random() * (COLS - 1));
             }
 
-            System.out.println("x: " + x + ", y: " + y + "\n");
             tanks[i] = new Tank(board, x, y);
-            System.out.println(getBoardState());
         }
     }
 
@@ -53,7 +53,8 @@ public class Board {
 
         boolean isOccupied = false;
         boolean isVisible = false;
-
+        int x;
+        int y;
         for(int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
                 board[i][j] = new Unit(isOccupied, isVisible);
@@ -61,8 +62,8 @@ public class Board {
         }
 
         for(int i = 0; i < tanks.length; i++) {
-            int x = (int) Math.random() * (ROWS - 1);
-            int y = (int) Math.random() * (COLS - 1);
+            x = (int) Math.random() * (ROWS - 1);
+            y = (int) Math.random() * (COLS - 1);
             tanks[i] = new Tank(board, x, y);
             System.out.println(getBoardState());
         }
@@ -77,6 +78,8 @@ public class Board {
 
         boolean isOccupied = false;
         boolean isVisible = false;
+        int x;
+        int y;
 
         for(int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
@@ -85,8 +88,8 @@ public class Board {
         }
 
         for(int i = 0; i < tanks.length; i++) {
-            int x = (int) Math.random() * (ROWS - 1);
-            int y = (int) Math.random() * (COLS - 1);
+            x = (int) Math.random() * (ROWS - 1);
+            y = (int) Math.random() * (COLS - 1);
             tanks[i] = new Tank(board, x, y);
             System.out.println(getBoardState());
         }
@@ -96,13 +99,17 @@ public class Board {
         return isCheat;
     }
 
+    public int getNumTanks() {
+        return tanks.length;
+    }
+
     public void takeTurn(int row, int col) {
         //take turns
         //enter row and col to find Unit[row][col]
         Unit destination = board[row][col];
         //fortress fires at coordinate
         if (fortress.fire(destination) == true) {
-            tanks[getTankIndex(row, col)].dealDamage();
+            tanks[getTankIndex(row, col)].takeDamage();
         }
         //check if game is over.
         if (isGameOver() ==  true) {
@@ -126,6 +133,22 @@ public class Board {
                 }
             }
         }
+    }
+
+    public boolean getHitStatus(int x, int y) {
+        return board[x][y].getOccupier() && board[x][y].getVisibility();
+    }
+
+    public int[] getTankDamages() {
+        int[] tankDamages = new int[tanks.length];
+        for(int i = 0; i < tanks.length; i++) {
+            tankDamages[i] = tanks[i].getDamage();
+        }
+        return tankDamages;
+    }
+
+    public int getFortressHealth() {
+        return fortress.getHealth();
     }
 
     public String getBoardState() {
