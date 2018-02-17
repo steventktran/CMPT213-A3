@@ -10,6 +10,7 @@ public class gameUI {
     public static void main(String[] args) {
         Board board;
         Scanner scan = new Scanner(System.in);
+        String input;
         int x;
         int y;
 
@@ -34,9 +35,15 @@ public class gameUI {
         }
 
         while(!board.isGameOver()) {
-            x = scan.nextInt();
-            y = scan.nextInt();
+            input = scan.nextLine().toLowerCase().trim();
+            while(input.length() > 3) {
+                System.out.println("Invalid input. Please enter a coordinate in the format 'A1', case-insensitive.\n");
+                input = scan.nextLine().toLowerCase().trim();
+            }
+            x = (int)input.charAt(0) - 'a';
+            y = parseInt(input.substring(1)) - 1;
 
+            System.out.println("x: " + x + "y: " + y + "\n");
             board.takeTurn(x, y);
             System.out.println(board.getBoardState());
         }

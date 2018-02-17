@@ -19,16 +19,24 @@ public class Board {
         tanks = new Tank[5];
         numTanksAlive = 5;
         isCheat = false;
+        fortress = new Fortress();
 
         boolean isOccupied = false;
         boolean isVisible = false;
 
-        for (Unit[] unitRow : board) {
-            for (Unit unit : unitRow) {
-                unit = new Unit(isOccupied, isVisible);
+        for(int i = 0; i < ROWS; i++) {
+            for (int j = 0; j < COLS; j++) {
+                board[i][j] = new Unit(isOccupied, isVisible);
             }
         }
 
+        for(int i = 0; i < tanks.length; i++) {
+            int x = (int) Math.random() * (ROWS - 1);
+            int y = (int) Math.random() * (COLS - 1);
+            tanks[i] = new Tank(board, x, y);
+            System.out.println(getBoardState());
+        }
+        /*
         for (Tank indivTank : tanks) {
             Random randX = new Random(System.currentTimeMillis());
             int x = Math.abs(randX.nextInt() % 10);
@@ -36,8 +44,13 @@ public class Board {
             int y = Math.abs(randY.nextInt() % 10);
             System.out.println("x = " + x);
             System.out.println("y = " + y);
+            int x = (int) Math.random() * (ROWS - 1);
+            int y = (int) Math.random() * (COLS - 1);
             indivTank = new Tank(board, x, y);
-        }
+            System.out.println(getBoardState());
+        }*/
+
+
     }
 
     public Board(int numTanks) {
@@ -129,16 +142,16 @@ public class Board {
     public String getBoardState() {
         String boardState = "";
 
-        boardState += " A B C D E F G H I J K\n";
+        boardState += "  1 2 3 4 5 6 7 8 9 10\n";
         for (int i = 0; i < ROWS; i++) {
-            boardState += i;
+            boardState += (char)('A' + i) + " ";
             for (int j = 0; j < COLS; j++) {
                 if (board[i][j].getOccupier() && board[i][j].getVisibility()) {
                     boardState += "X ";
                 } else if (!board[i][j].getOccupier() && board[i][j].getVisibility()) {
                     boardState += "  ";
                 } else {
-                    boardState += ". ";
+                    boardState += "~ ";
                 }
             }
             boardState += "\n";
@@ -149,13 +162,13 @@ public class Board {
     public String getFinalBoardState() {
         String boardState = "";
 
-        boardState += " A B C D E F G H I J K\n";
+        boardState += "  1 2 3 4 5 6 7 8 9 10\n";
         for (int i = 0; i < ROWS; i++) {
-            boardState += i;
+            boardState += (char) ('A' + i) + " ";
             for (int j = 0; j < COLS; j++) {
                 int tankIndex = getTankIndex(i, j);
                 if(tankIndex != -1) {
-                    boardState += ("A" + tankIndex) + " ";
+                    boardState += (char) ('A' + tankIndex) + " ";
                 } else {
                     boardState += ". ";
                 }

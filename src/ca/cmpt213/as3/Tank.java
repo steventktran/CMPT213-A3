@@ -28,7 +28,7 @@ public class Tank {
 
       possibleSpaces.add(board[currentX][currentY]);
       tetromino[0] = possibleSpaces.get(0);
-      board[x][y].setOccupied();
+      board[currentX][currentY].setOccupied();
       possibleSpaces.remove(0);
       numUnits++;
 
@@ -46,7 +46,7 @@ public class Tank {
           possibleSpaces.add(board[currentX][currentY - 1]);
         }
 
-        currentUnit = possibleSpaces.get((int) Math.random()*possibleSpaces.size());
+        currentUnit = possibleSpaces.get((int) Math.random() * (possibleSpaces.size() - 1));
         tetromino[numUnits] = currentUnit;
         indexes = getIndexOnBoard(board, currentUnit);
         currentX = indexes[0];
