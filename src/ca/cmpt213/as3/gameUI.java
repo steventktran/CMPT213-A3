@@ -15,6 +15,8 @@ public class gameUI {
         int y;
         int[] tankDamages;
 
+        System.out.println("args[0] = " + args[0]);
+
         if (args.length > 2) {
             System.out.println("Invalid number of Arguments.");
         }
