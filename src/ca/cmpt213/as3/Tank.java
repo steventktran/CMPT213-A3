@@ -18,7 +18,8 @@ public class Tank {
       tetromino = new Unit[4];
       createTetromino(board, x, y);
     }
-    public void createTetromino(Unit[][] board, int x, int y) {
+
+    public void createTetromino(Unit[][] board, int x, int y){
       List<Unit> possibleSpaces = new ArrayList<>();
       int numUnits = 0;
       int currentX = x;
@@ -43,13 +44,10 @@ public class Tank {
           possibleSpaces.add(board[currentX][currentY + 1]);
         }
         if(currentY - 1 > 0 && !board[currentX][currentY - 1].getOccupier()) {
-          possibleSpaces.add(board[currentX][currentY - 1]);
+            possibleSpaces.add(board[currentX][currentY - 1]);
         }
 
-        if(possibleSpaces.size() == 0) {
-            new Exception("Unable to create tetromino.");
-        }
-        currentUnit = possibleSpaces.get((int) Math.random() * (possibleSpaces.size() - 1));
+        currentUnit = possibleSpaces.get((int) (Math.random() * (possibleSpaces.size() - 1)));
         tetromino[numUnits] = currentUnit;
         indexes = getIndexOnBoard(board, currentUnit);
         currentX = indexes[0];
@@ -89,9 +87,13 @@ public class Tank {
       return null;
     }
 
+    public int getDamage() {
+        return damage;
+    }
+
     public void takeDamage() {
         health--;
-        damage = (int) Math.ceil(damage/DAMAGE_DROPOFF_FACTOR); // 20/4 = 5, 5/4 = 2, 2/4 = 1,
+        damage = (int) Math.ceil( (double) damage/DAMAGE_DROPOFF_FACTOR); // 20/4 = 5, 5/4 = 2, 2/4 = 1,
         if(health <= 0) {
           isDestroyed = true;
           damage = 0;
