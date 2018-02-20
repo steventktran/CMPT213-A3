@@ -28,13 +28,18 @@ public class Unit {
     }
 
     public void setOccupied() {
-      isOccupied = true;
+        isOccupied = true;
     }
+
     public void setUnoccupied() {
         isOccupied = false;
     }
 
-    public boolean getUsable() { return isUsable;}
+    public boolean getUsable() {
+        return isUsable;
+    }
 
-    public void setUnusable() { isUsable = false; }
+    public void setUnusable() {
+        isUsable = false;
+    }
 }

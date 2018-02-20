@@ -1,4 +1,5 @@
 package ca.cmpt213.as3;
+
 import java.util.Random;
 
 public class Board {
@@ -24,21 +25,20 @@ public class Board {
         int x;
         int y;
 
-        for(int i = 0; i < ROWS; i++) {
+        for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
                 board[i][j] = new Unit(isOccupied, isVisible);
             }
         }
 
-        for(int i = 0; i < tanks.length; i++) {
+        for (int i = 0; i < tanks.length; i++) {
             x = (int) (Math.random() * (ROWS - 1));
             y = (int) (Math.random() * (COLS - 1));
 
-            while(board[x][y].getOccupier()) {
+            while (board[x][y].getOccupier()) {
                 x = (int) (Math.random() * (ROWS - 1));
                 y = (int) (Math.random() * (COLS - 1));
             }
-            System.out.println("THIS GETS CALLED" + x + ", " + y);
             tanks[i] = new Tank(board, x, y);
         }
     }
@@ -54,23 +54,22 @@ public class Board {
         boolean isVisible = false;
         int x;
         int y;
-        for(int i = 0; i < ROWS; i++) {
+        for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
                 board[i][j] = new Unit(isOccupied, isVisible);
             }
         }
 
-        for(int i = 0; i < tanks.length; i++) {
+        for (int i = 0; i < tanks.length; i++) {
             x = (int) (Math.random() * (ROWS - 1));
             y = (int) (Math.random() * (COLS - 1));
 
-            while(board[x][y].getOccupier()) {
+            while (board[x][y].getOccupier()) {
                 x = (int) (Math.random() * (ROWS - 1));
                 y = (int) (Math.random() * (COLS - 1));
             }
 
             tanks[i] = new Tank(board, x, y);
-            System.out.println("THIS GETS CALLED" + x + ", " + y);
         }
     }
 
@@ -86,22 +85,21 @@ public class Board {
         int x;
         int y;
 
-        for(int i = 0; i < ROWS; i++) {
+        for (int i = 0; i < ROWS; i++) {
             for (int j = 0; j < COLS; j++) {
                 board[i][j] = new Unit(isOccupied, isVisible);
             }
         }
         System.out.println(tanks.length);
-        for(int i = 0; i < tanks.length; i++) {
+        for (int i = 0; i < tanks.length; i++) {
             x = (int) (Math.random() * (ROWS - 1));
             y = (int) (Math.random() * (COLS - 1));
 
-            while(board[x][y].getOccupier()) {
+            while (board[x][y].getOccupier()) {
                 x = (int) (Math.random() * (ROWS - 1));
                 y = (int) (Math.random() * (COLS - 1));
             }
             tanks[i] = new Tank(board, x, y);
-            System.out.println("THIS GETS CALLED" + x + ", " + y);
         }
     }
 
@@ -122,7 +120,7 @@ public class Board {
             tanks[getTankIndex(row, col)].takeDamage();
         }
         //check if game is over.
-        if (isGameOver() ==  true) {
+        if (isGameOver() == true) {
             if (numTanksAlive == 0) {
                 System.out.println("tanks lost");
             } else {
@@ -151,7 +149,7 @@ public class Board {
 
     public int[] getTankDamages() {
         int[] tankDamages = new int[tanks.length];
-        for(int i = 0; i < tanks.length; i++) {
+        for (int i = 0; i < tanks.length; i++) {
             tankDamages[i] = tanks[i].getDamage();
         }
         return tankDamages;
@@ -166,7 +164,7 @@ public class Board {
 
         boardState += "  1 2 3 4 5 6 7 8 9 10\n";
         for (int i = 0; i < ROWS; i++) {
-            boardState += (char)('A' + i) + " ";
+            boardState += (char) ('A' + i) + " ";
             for (int j = 0; j < COLS; j++) {
                 if (board[i][j].getOccupier() && board[i][j].getVisibility()) {
                     boardState += "X ";
@@ -189,7 +187,7 @@ public class Board {
             boardState += (char) ('A' + i) + " ";
             for (int j = 0; j < COLS; j++) {
                 int tankIndex = getTankIndex(i, j);
-                if(tankIndex != -1) {
+                if (tankIndex != -1) {
                     boardState += (char) ('A' + tankIndex) + " ";
                 } else {
                     boardState += ". ";
@@ -201,8 +199,8 @@ public class Board {
     }
 
     public int getTankIndex(int x, int y) {
-        for(int i = 0; i < tanks.length; i++) {
-            if(tanks[i].containsUnit(board[x][y])) {
+        for (int i = 0; i < tanks.length; i++) {
+            if (tanks[i].containsUnit(board[x][y])) {
                 return i;
             }
         }

@@ -37,7 +37,7 @@ public class Fortress {
         }
 
         if (health <= 0) {
-          isDestroyed = true;
+            isDestroyed = true;
         }
     }
 
