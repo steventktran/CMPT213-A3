@@ -58,23 +58,40 @@ public class gameUI {
 
             board.takeTurn(x, y);
 
-            if (board.getHitStatus(x, y)) {
-                System.out.println("HIT!");
-            } else {
-                System.out.println("Miss.");
-            }
+            if (board.playerWin() == true) {
+                //you win
+                if (board.getHitStatus(x, y)) {
+                    System.out.println("HIT!");
+                } else {
+                    System.out.println("Miss.");
+                }
 
-            tankDamages = board.getTankDamages();
-            for (int i = 0; i < board.getNumTanks(); i++) {
-                if (tankDamages[i] != 0) {
-                    System.out.println("Alive Tanks #" + (i + 1) + " of " + board.getNumTanks() + " hit you for " + tankDamages[i] + "!");
+                System.out.println();
+                System.out.println("Congratulations! You won.");
+            } else {
+                if (board.getHitStatus(x, y)) {
+                    System.out.println("HIT!");
+                } else {
+                    System.out.println("Miss.");
+                }
+                //tanks shoot at you.
+                tankDamages = board.getTankDamages();
+                for (int i = 0; i < board.getNumTanks(); i++) {
+                    if (tankDamages[i] != 0) {
+                        System.out.println("Alive Tanks #" + (i + 1) + " of " + board.getNumTanks() + " hit you for " + tankDamages[i] + "!");
+                    }
+                }
+                if (board.tanksWin() == true) {
+                    //you lose
+                    System.out.println();
+                    System.out.println("You lost.");
                 }
             }
 
             System.out.println();
-
         }
 
         System.out.println(board.getFinalBoardState());
+        System.out.println("Fortress Structure Left: " + board.getFortressHealth());
     }
 }
