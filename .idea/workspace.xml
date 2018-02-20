@@ -4,8 +4,16 @@
     <list default="true" id="fbfff9b9-8ffd-4c85-9e22-fb6f91c375b5" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/out/artifacts/213_Assignment3_jar/213_Assignment3.jar" afterPath="$PROJECT_DIR$/out/artifacts/213_Assignment3_jar/213_Assignment3.jar" />
-      <change beforePath="$PROJECT_DIR$/src/ca/cmpt213/as3/Board.java" afterPath="$PROJECT_DIR$/src/ca/cmpt213/as3/Board.java" />
-      <change beforePath="$PROJECT_DIR$/src/ca/cmpt213/as3/gameUI.java" afterPath="$PROJECT_DIR$/src/ca/cmpt213/as3/gameUI.java" />
+      <change beforePath="$PROJECT_DIR$/out/production/213_Assignment3/ca/cmpt213/as3/Board.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/213_Assignment3/ca/cmpt213/as3/Fortress.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/213_Assignment3/ca/cmpt213/as3/Tank.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/213_Assignment3/ca/cmpt213/as3/Unit.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/out/production/213_Assignment3/ca/cmpt213/as3/gameUI.class" afterPath="" />
+      <change beforePath="$PROJECT_DIR$/src/ca/cmpt213/as3/Board.java" afterPath="$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Board.java" />
+      <change beforePath="$PROJECT_DIR$/src/ca/cmpt213/as3/Fortress.java" afterPath="$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Fortress.java" />
+      <change beforePath="$PROJECT_DIR$/src/ca/cmpt213/as3/Tank.java" afterPath="$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Tank.java" />
+      <change beforePath="$PROJECT_DIR$/src/ca/cmpt213/as3/Unit.java" afterPath="$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Unit.java" />
+      <change beforePath="$PROJECT_DIR$/src/ca/cmpt213/as3/gameUI.java" afterPath="$PROJECT_DIR$/src/ca/cmpt213/as3/UI/gameUI.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,59 +26,57 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="600">
       <file leaf-file-name="Tank.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Tank.java">
+        <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Tank.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1575">
-              <caret line="51" column="51" lean-forward="false" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
-                <element signature="e#7333#7334#0" expanded="true" />
-                <element signature="e#7362#7363#0" expanded="true" />
+                <element signature="e#7339#7340#0" expanded="true" />
+                <element signature="e#7368#7369#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Unit.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Unit.java">
+        <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Unit.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+            <state relative-caret-position="561">
+              <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Board.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Board.java">
+        <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Board.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="221" column="33" lean-forward="false" selection-start-line="221" selection-start-column="33" selection-end-line="221" selection-end-column="33" />
+            <state relative-caret-position="186">
+              <caret line="191" column="9" lean-forward="true" selection-start-line="191" selection-start-column="9" selection-end-line="191" selection-end-column="9" />
               <folding>
-                <element signature="e#4405#4406#0" expanded="true" />
-                <element signature="e#4484#4485#0" expanded="true" />
-                <element signature="e#4754#4755#0" expanded="true" />
-                <element signature="e#4797#4798#0" expanded="true" />
+                <element signature="e#4385#4386#0" expanded="true" />
+                <element signature="e#4464#4465#0" expanded="true" />
+                <element signature="e#4734#4735#0" expanded="true" />
+                <element signature="e#4777#4778#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="gameUI.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/gameUI.java">
+        <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/UI/gameUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="94" column="84" lean-forward="false" selection-start-line="94" selection-start-column="84" selection-end-line="94" selection-end-column="84" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="165">
+              <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="Fortress.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Fortress.java">
+        <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Fortress.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
+            <state relative-caret-position="759">
               <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
               <folding />
             </state>
@@ -96,11 +102,14 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/ca/cmpt213/as3/Unit.java" />
         <option value="$PROJECT_DIR$/src/ca/cmpt213/as3/Fortress.java" />
         <option value="$PROJECT_DIR$/src/ca/cmpt213/as3/Tank.java" />
-        <option value="$PROJECT_DIR$/src/ca/cmpt213/as3/Board.java" />
         <option value="$PROJECT_DIR$/src/ca/cmpt213/as3/gameUI.java" />
+        <option value="$PROJECT_DIR$/src/ca/cmpt213/as3/Unit.java" />
+        <option value="$PROJECT_DIR$/src/ca/cmpt213/as3/Board.java" />
+        <option value="$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Board.java" />
+        <option value="$PROJECT_DIR$/src/UI/gameUI.java" />
+        <option value="$PROJECT_DIR$/src/ca/cmpt213/as3/UI/gameUI.java" />
       </list>
     </option>
   </component>
@@ -132,8 +141,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -192,12 +199,28 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="as3" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="Assignment3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMPT213A3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="as3" type="462c0819:PsiDirectoryNode" />
+              <item name="Logic" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Assignment3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="CMPT213A3" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="as3" type="462c0819:PsiDirectoryNode" />
+              <item name="UI" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="Scope" />
+      <pane id="Scratches" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -248,7 +271,7 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="MAIN_CLASS_NAME" value="ca.cmpt213.as3.gameUI" />
+      <option name="MAIN_CLASS_NAME" value="ca.cmpt213.as3.UI.gameUI" />
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="1 cheat" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
@@ -341,14 +364,16 @@
       <updated>1518736297617</updated>
       <workItem from="1518736307834" duration="6625000" />
       <workItem from="1518823766167" duration="9496000" />
+      <workItem from="1519170753546" duration="304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25610000" />
+    <option name="totallyTimeSpent" value="25914000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-13" y="-13" width="2762" height="1770" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -358,23 +383,23 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37229437" sideWeight="0.51759064" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40800866" sideWeight="0.4824094" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40800866" sideWeight="0.4824094" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25799572" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25767544" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39935064" sideWeight="0.48081023" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39884764" sideWeight="0.48081023" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -395,54 +420,52 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
           <caret line="23" column="37" lean-forward="false" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
           <folding>
-            <element signature="e#4405#4406#0" expanded="true" />
-            <element signature="e#4484#4485#0" expanded="true" />
-            <element signature="e#4754#4755#0" expanded="true" />
-            <element signature="e#4797#4798#0" expanded="true" />
+            <element signature="e#4385#4386#0" expanded="true" />
+            <element signature="e#4464#4465#0" expanded="true" />
+            <element signature="e#4734#4735#0" expanded="true" />
+            <element signature="e#4777#4778#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Tank.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
           <folding>
-            <element signature="e#7333#7334#0" expanded="true" />
-            <element signature="e#7362#7363#0" expanded="true" />
+            <element signature="e#7339#7340#0" expanded="true" />
+            <element signature="e#7368#7369#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="42" column="45" lean-forward="true" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
           <folding>
-            <element signature="e#4405#4406#0" expanded="true" />
-            <element signature="e#4484#4485#0" expanded="true" />
-            <element signature="e#4754#4755#0" expanded="true" />
-            <element signature="e#4797#4798#0" expanded="true" />
+            <element signature="e#4385#4386#0" expanded="true" />
+            <element signature="e#4464#4465#0" expanded="true" />
+            <element signature="e#4734#4735#0" expanded="true" />
+            <element signature="e#4777#4778#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/gameUI.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/UI/gameUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="41" column="8" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Fortress.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Fortress.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
@@ -458,48 +481,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Tank.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="44" column="46" lean-forward="false" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
           <folding>
-            <element signature="e#7333#7334#0" expanded="true" />
-            <element signature="e#7362#7363#0" expanded="true" />
+            <element signature="e#7339#7340#0" expanded="true" />
+            <element signature="e#7368#7369#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="42" column="48" lean-forward="true" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
           <folding>
-            <element signature="e#4405#4406#0" expanded="true" />
-            <element signature="e#4484#4485#0" expanded="true" />
-            <element signature="e#4754#4755#0" expanded="true" />
-            <element signature="e#4797#4798#0" expanded="true" />
+            <element signature="e#4385#4386#0" expanded="true" />
+            <element signature="e#4464#4465#0" expanded="true" />
+            <element signature="e#4734#4735#0" expanded="true" />
+            <element signature="e#4777#4778#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/gameUI.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/UI/gameUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="38" column="57" lean-forward="false" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Tetromino.java" />
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Tank.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="44" column="46" lean-forward="false" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
           <folding>
-            <element signature="e#7333#7334#0" expanded="true" />
-            <element signature="e#7362#7363#0" expanded="true" />
+            <element signature="e#7339#7340#0" expanded="true" />
+            <element signature="e#7368#7369#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -514,7 +535,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Unit.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Unit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
           <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
@@ -522,30 +543,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="82" column="0" lean-forward="false" selection-start-line="82" selection-start-column="0" selection-end-line="82" selection-end-column="0" />
           <folding>
-            <element signature="e#4405#4406#0" expanded="true" />
-            <element signature="e#4484#4485#0" expanded="true" />
-            <element signature="e#4754#4755#0" expanded="true" />
-            <element signature="e#4797#4798#0" expanded="true" />
+            <element signature="e#4385#4386#0" expanded="true" />
+            <element signature="e#4464#4465#0" expanded="true" />
+            <element signature="e#4734#4735#0" expanded="true" />
+            <element signature="e#4777#4778#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/gameUI.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/UI/gameUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Fortress.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Fortress.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
@@ -553,39 +572,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Tank.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1275">
           <caret line="96" column="16" lean-forward="true" selection-start-line="96" selection-start-column="16" selection-end-line="96" selection-end-column="16" />
           <folding>
-            <element signature="e#7333#7334#0" expanded="true" />
-            <element signature="e#7362#7363#0" expanded="true" />
+            <element signature="e#7339#7340#0" expanded="true" />
+            <element signature="e#7368#7369#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Tank.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1650">
           <caret line="50" column="42" lean-forward="true" selection-start-line="50" selection-start-column="42" selection-end-line="50" selection-end-column="42" />
           <folding>
-            <element signature="e#7333#7334#0" expanded="true" />
-            <element signature="e#7362#7363#0" expanded="true" />
+            <element signature="e#7339#7340#0" expanded="true" />
+            <element signature="e#7368#7369#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/gameUI.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/UI/gameUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="495">
           <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Fortress.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Fortress.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="825">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
@@ -593,15 +610,15 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="33">
           <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
           <folding>
-            <element signature="e#4405#4406#0" expanded="true" />
-            <element signature="e#4484#4485#0" expanded="true" />
-            <element signature="e#4754#4755#0" expanded="true" />
-            <element signature="e#4797#4798#0" expanded="true" />
+            <element signature="e#4385#4386#0" expanded="true" />
+            <element signature="e#4464#4465#0" expanded="true" />
+            <element signature="e#4734#4735#0" expanded="true" />
+            <element signature="e#4777#4778#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -615,7 +632,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Fortress.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Fortress.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="759">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
@@ -626,28 +643,26 @@
     <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/util/ArrayList.java" />
     <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/java/util/Objects.java" />
     <entry file="jar://C:/Program Files/Java/jdk-9.0.4/lib/src.zip!/java.base/jdk/internal/util/Preconditions.java" />
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/gameUI.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/UI/gameUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="15" column="26" lean-forward="false" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Tank.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="562">
           <caret line="40" column="28" lean-forward="false" selection-start-line="40" selection-start-column="25" selection-end-line="40" selection-end-column="28" />
           <folding>
-            <element signature="e#7333#7334#0" expanded="true" />
-            <element signature="e#7362#7363#0" expanded="true" />
+            <element signature="e#7339#7340#0" expanded="true" />
+            <element signature="e#7368#7369#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Unit.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Unit.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="132">
           <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
@@ -655,54 +670,52 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="281">
           <caret line="23" column="37" lean-forward="false" selection-start-line="23" selection-start-column="37" selection-end-line="23" selection-end-column="37" />
           <folding>
-            <element signature="e#4405#4406#0" expanded="true" />
-            <element signature="e#4484#4485#0" expanded="true" />
-            <element signature="e#4754#4755#0" expanded="true" />
-            <element signature="e#4797#4798#0" expanded="true" />
+            <element signature="e#4385#4386#0" expanded="true" />
+            <element signature="e#4464#4465#0" expanded="true" />
+            <element signature="e#4734#4735#0" expanded="true" />
+            <element signature="e#4777#4778#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Tank.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
           <folding>
-            <element signature="e#7333#7334#0" expanded="true" />
-            <element signature="e#7362#7363#0" expanded="true" />
+            <element signature="e#7339#7340#0" expanded="true" />
+            <element signature="e#7368#7369#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="42" column="45" lean-forward="true" selection-start-line="42" selection-start-column="45" selection-end-line="42" selection-end-column="45" />
           <folding>
-            <element signature="e#4405#4406#0" expanded="true" />
-            <element signature="e#4484#4485#0" expanded="true" />
-            <element signature="e#4754#4755#0" expanded="true" />
-            <element signature="e#4797#4798#0" expanded="true" />
+            <element signature="e#4385#4386#0" expanded="true" />
+            <element signature="e#4464#4465#0" expanded="true" />
+            <element signature="e#4734#4735#0" expanded="true" />
+            <element signature="e#4777#4778#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/gameUI.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/UI/gameUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
           <caret line="41" column="8" lean-forward="true" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Fortress.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Fortress.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
           <caret line="18" column="27" lean-forward="false" selection-start-line="18" selection-start-column="27" selection-end-line="18" selection-end-column="27" />
@@ -718,48 +731,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Tank.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="44" column="46" lean-forward="false" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
           <folding>
-            <element signature="e#7333#7334#0" expanded="true" />
-            <element signature="e#7362#7363#0" expanded="true" />
+            <element signature="e#7339#7340#0" expanded="true" />
+            <element signature="e#7368#7369#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Board.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="714">
           <caret line="42" column="48" lean-forward="true" selection-start-line="42" selection-start-column="48" selection-end-line="42" selection-end-column="48" />
           <folding>
-            <element signature="e#4405#4406#0" expanded="true" />
-            <element signature="e#4484#4485#0" expanded="true" />
-            <element signature="e#4754#4755#0" expanded="true" />
-            <element signature="e#4797#4798#0" expanded="true" />
+            <element signature="e#4385#4386#0" expanded="true" />
+            <element signature="e#4464#4465#0" expanded="true" />
+            <element signature="e#4734#4735#0" expanded="true" />
+            <element signature="e#4777#4778#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/gameUI.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/UI/gameUI.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="595">
           <caret line="38" column="57" lean-forward="false" selection-start-line="38" selection-start-column="57" selection-end-line="38" selection-end-column="57" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Tetromino.java" />
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Tank.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="731">
           <caret line="44" column="46" lean-forward="false" selection-start-line="44" selection-start-column="46" selection-end-line="44" selection-end-column="46" />
           <folding>
-            <element signature="e#7333#7334#0" expanded="true" />
-            <element signature="e#7362#7363#0" expanded="true" />
+            <element signature="e#7339#7340#0" expanded="true" />
+            <element signature="e#7368#7369#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -774,53 +785,51 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Fortress.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Fortress.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
+        <state relative-caret-position="759">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Unit.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Tank.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="31" lean-forward="false" selection-start-line="5" selection-start-column="31" selection-end-line="5" selection-end-column="31" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="true" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#7339#7340#0" expanded="true" />
+            <element signature="e#7368#7369#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Unit.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Tank.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Logic/Board.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1575">
-          <caret line="51" column="51" lean-forward="false" selection-start-line="51" selection-start-column="51" selection-end-line="51" selection-end-column="51" />
+        <state relative-caret-position="186">
+          <caret line="191" column="9" lean-forward="true" selection-start-line="191" selection-start-column="9" selection-end-line="191" selection-end-column="9" />
           <folding>
-            <element signature="e#7333#7334#0" expanded="true" />
-            <element signature="e#7362#7363#0" expanded="true" />
+            <element signature="e#4385#4386#0" expanded="true" />
+            <element signature="e#4464#4465#0" expanded="true" />
+            <element signature="e#4734#4735#0" expanded="true" />
+            <element signature="e#4777#4778#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/Board.java">
+    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/UI/gameUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="221" column="33" lean-forward="false" selection-start-line="221" selection-start-column="33" selection-end-line="221" selection-end-column="33" />
-          <folding>
-            <element signature="e#4405#4406#0" expanded="true" />
-            <element signature="e#4484#4485#0" expanded="true" />
-            <element signature="e#4754#4755#0" expanded="true" />
-            <element signature="e#4797#4798#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ca/cmpt213/as3/gameUI.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="576">
-          <caret line="94" column="84" lean-forward="false" selection-start-line="94" selection-start-column="84" selection-end-line="94" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="165">
+          <caret line="5" column="0" lean-forward="true" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

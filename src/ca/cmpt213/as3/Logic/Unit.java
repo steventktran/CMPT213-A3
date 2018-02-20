@@ -1,4 +1,4 @@
-package ca.cmpt213.as3;
+package ca.cmpt213.as3.Logic;
 
 public class Unit {
     private boolean isUsable;
@@ -19,7 +19,7 @@ public class Unit {
         isVisibile = false;
     }
 
-    public boolean getOccupier() {
+    public boolean getOccupied() {
         return isOccupied;
     }
 

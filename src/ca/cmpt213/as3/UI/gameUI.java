@@ -1,6 +1,7 @@
-package ca.cmpt213.as3;
+package ca.cmpt213.as3.UI;
 
-import java.sql.SQLOutput;
+import ca.cmpt213.as3.Logic.Board;
+
 import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;

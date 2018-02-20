@@ -1,6 +1,4 @@
-package ca.cmpt213.as3;
-
-import java.util.Random;
+package ca.cmpt213.as3.Logic;
 
 public class Board {
     private Unit[][] board;
@@ -35,7 +33,7 @@ public class Board {
             x = (int) (Math.random() * (ROWS - 1));
             y = (int) (Math.random() * (COLS - 1));
 
-            while (board[x][y].getOccupier()) {
+            while (board[x][y].getOccupied()) {
                 x = (int) (Math.random() * (ROWS - 1));
                 y = (int) (Math.random() * (COLS - 1));
             }
@@ -64,7 +62,7 @@ public class Board {
             x = (int) (Math.random() * (ROWS - 1));
             y = (int) (Math.random() * (COLS - 1));
 
-            while (board[x][y].getOccupier()) {
+            while (board[x][y].getOccupied()) {
                 x = (int) (Math.random() * (ROWS - 1));
                 y = (int) (Math.random() * (COLS - 1));
             }
@@ -95,7 +93,7 @@ public class Board {
             x = (int) (Math.random() * (ROWS - 1));
             y = (int) (Math.random() * (COLS - 1));
 
-            while (board[x][y].getOccupier()) {
+            while (board[x][y].getOccupied()) {
                 x = (int) (Math.random() * (ROWS - 1));
                 y = (int) (Math.random() * (COLS - 1));
             }
@@ -156,7 +154,7 @@ public class Board {
     }
 
     public boolean getHitStatus(int x, int y) {
-        return board[x][y].getOccupier() && board[x][y].getVisibility();
+        return board[x][y].getOccupied() && board[x][y].getVisibility();
     }
 
     public int[] getTankDamages() {
@@ -178,9 +176,9 @@ public class Board {
         for (int i = 0; i < ROWS; i++) {
             boardState += (char) ('A' + i) + " ";
             for (int j = 0; j < COLS; j++) {
-                if (board[i][j].getOccupier() && board[i][j].getVisibility()) {
+                if (board[i][j].getOccupied() && board[i][j].getVisibility()) {
                     boardState += "X ";
-                } else if (!board[i][j].getOccupier() && board[i][j].getVisibility()) {
+                } else if (!board[i][j].getOccupied() && board[i][j].getVisibility()) {
                     boardState += "  ";
                 } else {
                     boardState += "~ ";
@@ -221,14 +219,6 @@ public class Board {
 
     public boolean isGameOver() {
         //if fortress is dead or numTanksAlive is 0, return true.
-        if (fortress.isFortressDestroyed() == true) {
-            return true;
-        }
-
-        if (numTanksAlive == 0) {
-            return true;
-        }
-
-        return false;
+        return fortress.isFortressDestroyed() || numTanksAlive == 0;
     }
 }

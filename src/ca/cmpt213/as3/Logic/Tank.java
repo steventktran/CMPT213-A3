@@ -1,4 +1,4 @@
-package ca.cmpt213.as3;
+package ca.cmpt213.as3.Logic;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -52,16 +52,16 @@ public class Tank {
         //while there are 4 or less cells in tetromino,
         //as long as new possible units are inbound, and not occupied, add to possible spaces.
         while (numUnits < 4 && hasUsableSpaces(board)) {
-            if (currentX + 1 < board.length && !board[currentX + 1][currentY].getOccupier() && !possibleSpaces.contains(board[currentX + 1][currentY])) {
+            if (currentX + 1 < board.length && !board[currentX + 1][currentY].getOccupied() && !possibleSpaces.contains(board[currentX + 1][currentY])) {
                 possibleSpaces.add(board[currentX + 1][currentY]);
             }
-            if (currentX - 1 > 0 && !board[currentX - 1][currentY].getOccupier() && !possibleSpaces.contains(board[currentX - 1][currentY])) {
+            if (currentX - 1 > 0 && !board[currentX - 1][currentY].getOccupied() && !possibleSpaces.contains(board[currentX - 1][currentY])) {
                 possibleSpaces.add(board[currentX - 1][currentY]);
             }
-            if (currentY + 1 < board[0].length && !board[currentX][currentY + 1].getOccupier() && !possibleSpaces.contains(board[currentX][currentY + 1])) {
+            if (currentY + 1 < board[0].length && !board[currentX][currentY + 1].getOccupied() && !possibleSpaces.contains(board[currentX][currentY + 1])) {
                 possibleSpaces.add(board[currentX][currentY + 1]);
             }
-            if (currentY - 1 > 0 && !board[currentX][currentY - 1].getOccupier() && !possibleSpaces.contains(board[currentX][currentY - 1])) {
+            if (currentY - 1 > 0 && !board[currentX][currentY - 1].getOccupied() && !possibleSpaces.contains(board[currentX][currentY - 1])) {
                 possibleSpaces.add(board[currentX][currentY - 1]);
             }
 
@@ -76,7 +76,7 @@ public class Tank {
 
                 currentX = (int) Math.floor(Math.random() * (board.length - 1));
                 currentY = (int) Math.floor(Math.random() * (board[0].length - 1));
-                if(!board[currentX][currentY].getOccupier()) {
+                if(!board[currentX][currentY].getOccupied()) {
                     possibleSpaces.add(board[currentX][currentY]);
                     tempTetromino.add(possibleSpaces.get(0));
                     board[currentX][currentY].setOccupied();
@@ -85,16 +85,16 @@ public class Tank {
                     numUnits++;
 
 
-                    if (currentX + 1 < board.length && !board[currentX + 1][currentY].getOccupier() && !possibleSpaces.contains(board[currentX + 1][currentY])) {
+                    if (currentX + 1 < board.length && !board[currentX + 1][currentY].getOccupied() && !possibleSpaces.contains(board[currentX + 1][currentY])) {
                         possibleSpaces.add(board[currentX + 1][currentY]);
                     }
-                    if (currentX - 1 > 0 && !board[currentX - 1][currentY].getOccupier() && !possibleSpaces.contains(board[currentX - 1][currentY])) {
+                    if (currentX - 1 > 0 && !board[currentX - 1][currentY].getOccupied() && !possibleSpaces.contains(board[currentX - 1][currentY])) {
                         possibleSpaces.add(board[currentX - 1][currentY]);
                     }
-                    if (currentY + 1 < board[0].length && !board[currentX][currentY + 1].getOccupier() && !possibleSpaces.contains(board[currentX][currentY + 1])) {
+                    if (currentY + 1 < board[0].length && !board[currentX][currentY + 1].getOccupied() && !possibleSpaces.contains(board[currentX][currentY + 1])) {
                         possibleSpaces.add(board[currentX][currentY + 1]);
                     }
-                    if (currentY - 1 > 0 && !board[currentX][currentY - 1].getOccupier() && !possibleSpaces.contains(board[currentX][currentY - 1])) {
+                    if (currentY - 1 > 0 && !board[currentX][currentY - 1].getOccupied() && !possibleSpaces.contains(board[currentX][currentY - 1])) {
                         possibleSpaces.add(board[currentX][currentY - 1]);
                     }
                 } else {

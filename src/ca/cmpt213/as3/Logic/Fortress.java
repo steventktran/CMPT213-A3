@@ -1,4 +1,4 @@
-package ca.cmpt213.as3;
+package ca.cmpt213.as3.Logic;
 
 public class Fortress {
     private int health;
@@ -19,7 +19,7 @@ public class Fortress {
         //fire at coordinate
         if (coordinate.getVisibility() == false) {
             coordinate.reveal();
-            if (coordinate.getOccupier()) {
+            if (coordinate.getOccupied()) {
                 hits = true;
             }
         }
