@@ -89,27 +89,21 @@ public class Board {
         //enter row and col to find Unit[row][col]
         Unit destination = board[row][col];
         //fortress fires at coordinate
-        fortress.fire(destination);
-        //check if game is over.
-        if (isGameOver() ==  true) {
-            if (numTanksAlive == 0) {
-                System.out.println("tanks lost");
-            } else {
-                System.out.println("fortress lost");
+        if (fortress.fire(destination) == true) {
+            Tank tank = tanks[getTankIndex(row, col)];
+            tank.takeDamage();
+            if(tank.isDestroyed()) {
+                numTanksAlive--;
             }
+        }
+        //check if game is over.
+        if (isGameOver() == true) {
+            return;
         } else {
             //all tanks fire at fortress.
             for (Tank eachTank : tanks) {
                 int damage = eachTank.dealDamage();
                 fortress.takeDamage(damage);
-                //check if game is over.
-                if (isGameOver() == true) {
-                    if (numTanksAlive == 0) {
-                        System.out.println("tanks lost");
-                    } else {
-                        System.out.println("fortress lost");
-                    }
-                }
             }
         }
     }
@@ -147,14 +141,10 @@ public class Board {
 
     public boolean isGameOver() {
         //if fortress is dead or numTanksAlive is 0, return true.
-        if (fortress.isFortressDestroyed() == true) {
-            return true;
-        }
+        return fortress.isFortressDestroyed() || numTanksAlive == 0;
+    }
 
-        if (numTanksAlive == 0) {
-            return true;
-        }
-
-        return false;
+    public boolean isPlayerWin() {
+        return numTanksAlive == 0;
     }
 }

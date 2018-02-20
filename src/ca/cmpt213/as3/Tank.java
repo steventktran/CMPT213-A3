@@ -66,4 +66,8 @@ public class Tank {
         return damage;
       }
     }
+
+    public boolean isDestroyed() {
+        return isDestroyed;
+    }
 }
