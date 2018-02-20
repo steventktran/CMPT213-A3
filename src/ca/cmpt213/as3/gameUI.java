@@ -7,15 +7,13 @@ import static java.lang.Integer.parseInt;
 
 
 public class gameUI {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Board board;
         Scanner scan = new Scanner(System.in);
         String input;
         int x;
         int y;
         int[] tankDamages;
-
-        System.out.println("args[0] = " + args[0]);
 
         if (args.length > 2) {
             System.out.println("Invalid number of Arguments.");

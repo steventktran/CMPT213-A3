@@ -13,7 +13,7 @@ public class Tank {
 
     private static final int DAMAGE_DROPOFF_FACTOR = 4;
 
-    public Tank(Unit[][] board, int x, int y) {
+    public Tank(Unit[][] board, int x, int y) throws Exception {
       health = 4;
       damage = 20;
       isDestroyed = false;
@@ -22,7 +22,8 @@ public class Tank {
 
     }
 
-    public void createTetromino(Unit[][] board, int x, int y){
+    public void createTetromino(Unit[][] board, int x, int y) throws Exception {
+        //System.out.println(x + ", " + y);
         //Array list of Units called possibleSpaces
         //current number of Units is initialized to 0.
         //currentX is x value entered, currentY is y value entered.
@@ -73,35 +74,40 @@ public class Tank {
             tempTetromino.clear();
             numUnits = 0;
 
-            if (tempTetromino.size() == 0) {
+            currentX = (int) Math.floor(Math.random() * (board.length - 1));
+            currentY = (int) Math.floor(Math.random() * (board[0].length - 1));
+
+            while(board[currentX][currentY].getOccupier()) {
                 currentX = (int) Math.floor(Math.random() * (board.length - 1));
                 currentY = (int) Math.floor(Math.random() * (board[0].length - 1));
-
-                if(currentX + 1 < board.length && !board[currentX + 1][currentY].getOccupier()) {
-                    possibleSpaces.add(board[currentX + 1][currentY]);
-                }
-                if(currentX - 1 > 0 && !board[currentX - 1][currentY].getOccupier()) {
-                    possibleSpaces.add(board[currentX - 1][currentY]);
-                }
-                if(currentY + 1 < board[0].length && !board[currentX][currentY + 1].getOccupier()) {
-                    possibleSpaces.add(board[currentX][currentY + 1]);
-                }
-                if(currentY - 1 > 0 && !board[currentX][currentY - 1].getOccupier()) {
-                    possibleSpaces.add(board[currentX][currentY - 1]);
-                }
             }
+
+            possibleSpaces.add(board[currentX][currentY]);
+            tempTetromino.add(possibleSpaces.get(0));
+            board[currentX][currentY].setOccupied();
+            board[currentX][currentY].setUnusable();
+            possibleSpaces.remove(0);
+            numUnits++;
+
+            if(currentX + 1 < board.length && !board[currentX + 1][currentY].getOccupier()) {
+                possibleSpaces.add(board[currentX + 1][currentY]);
+            }
+            if(currentX - 1 > 0 && !board[currentX - 1][currentY].getOccupier()) {
+                possibleSpaces.add(board[currentX - 1][currentY]);
+            }
+            if(currentY + 1 < board[0].length && !board[currentX][currentY + 1].getOccupier()) {
+                possibleSpaces.add(board[currentX][currentY + 1]);
+            }
+            if(currentY - 1 > 0 && !board[currentX][currentY - 1].getOccupier()) {
+                possibleSpaces.add(board[currentX][currentY - 1]);
+            }
+
         }
 
         //within an array of possible spaces, find a random index within size of arraylist,  set current unit to unit of that index of possible list.
           //add current unit to tetromino, set current x and y index to index of that board, set unit to occupy, increment numUnits, remove from possibleSpaces.
 
         currentUnit = possibleSpaces.get((int) (Math.random() * (possibleSpaces.size() - 1)));
-          int currentUnitIndex = (int) Math.floor(Math.random() * possibleSpaces.size());
-          int originalCurrUnitIndex = (int) abs(Math.random() * (possibleSpaces.size() -1));
-          //System.out.println("possibleSpaces.size() - 1 : " + (possibleSpaces.size() - 1));
-          //System.out.println("originalCurrUnitIndex() : " + originalCurrUnitIndex);
-
-        //currentUnit = possibleSpaces.get((int) Math.floor(Math.random() * possibleSpaces.size()));
         tempTetromino.add(currentUnit);
         indexes = getIndexOnBoard(board, currentUnit);
         currentX = indexes[0];
@@ -111,8 +117,11 @@ public class Tank {
         numUnits++;
         possibleSpaces.remove(currentUnit);
       }
-        System.out.println(tetromino.length);
         System.out.println(tempTetromino.size());
+      if(tempTetromino.size() != 4) {
+          throw new Exception("Unable to add another tetromino.");
+      }
+
       for (int i = 0; i < tetromino.length; i++) {
         tetromino[i] = tempTetromino.get(i);
       }

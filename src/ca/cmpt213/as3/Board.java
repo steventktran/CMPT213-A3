@@ -1,5 +1,4 @@
 package ca.cmpt213.as3;
-
 import java.util.Random;
 
 public class Board {
@@ -13,7 +12,7 @@ public class Board {
     private static final int COLS = 10;
 
 
-    public Board() {
+    public Board() throws Exception {
         board = new Unit[ROWS][COLS];
         tanks = new Tank[5];
         numTanksAlive = 5;
@@ -39,12 +38,12 @@ public class Board {
                 x = (int) (Math.random() * (ROWS - 1));
                 y = (int) (Math.random() * (COLS - 1));
             }
-
+            System.out.println("THIS GETS CALLED" + x + ", " + y);
             tanks[i] = new Tank(board, x, y);
         }
     }
 
-    public Board(int numTanks) {
+    public Board(int numTanks) throws Exception {
         board = new Unit[ROWS][COLS];
         tanks = new Tank[numTanks];
         numTanksAlive = numTanks;
@@ -62,14 +61,20 @@ public class Board {
         }
 
         for(int i = 0; i < tanks.length; i++) {
-            x = (int) Math.random() * (ROWS - 1);
-            y = (int) Math.random() * (COLS - 1);
+            x = (int) (Math.random() * (ROWS - 1));
+            y = (int) (Math.random() * (COLS - 1));
+
+            while(board[x][y].getOccupier()) {
+                x = (int) (Math.random() * (ROWS - 1));
+                y = (int) (Math.random() * (COLS - 1));
+            }
+
             tanks[i] = new Tank(board, x, y);
-            System.out.println(getBoardState());
+            System.out.println("THIS GETS CALLED" + x + ", " + y);
         }
     }
 
-    public Board(int numTanks, String cheat) {
+    public Board(int numTanks, String cheat) throws Exception {
         board = new Unit[ROWS][COLS];
         tanks = new Tank[numTanks];
         numTanksAlive = numTanks;
@@ -86,12 +91,17 @@ public class Board {
                 board[i][j] = new Unit(isOccupied, isVisible);
             }
         }
-
+        System.out.println(tanks.length);
         for(int i = 0; i < tanks.length; i++) {
-            x = (int) Math.random() * (ROWS - 1);
-            y = (int) Math.random() * (COLS - 1);
+            x = (int) (Math.random() * (ROWS - 1));
+            y = (int) (Math.random() * (COLS - 1));
+
+            while(board[x][y].getOccupier()) {
+                x = (int) (Math.random() * (ROWS - 1));
+                y = (int) (Math.random() * (COLS - 1));
+            }
             tanks[i] = new Tank(board, x, y);
-            System.out.println(getBoardState());
+            System.out.println("THIS GETS CALLED" + x + ", " + y);
         }
     }
 
