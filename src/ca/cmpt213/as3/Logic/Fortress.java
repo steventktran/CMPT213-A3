@@ -35,4 +35,5 @@ public class Fortress {
     public boolean isFortressDestroyed() {
         return isDestroyed;
     }
+
 }

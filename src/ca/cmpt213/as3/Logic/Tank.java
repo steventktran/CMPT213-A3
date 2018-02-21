@@ -5,6 +5,14 @@ import java.util.List;
 
 import static java.lang.Math.abs;
 
+/**
+ * Tank.java - represents one tank made up of four Units.
+ * Contains an array of Unit objects, called tetromino.
+ * Health represents the number of "cells" or Units still undestroyed
+ * Damage decreases as health decreases, with the dropoff factor of four.
+ * If health reaches zero, the boolean isDestroyed becomes true.
+ */
+
 public class Tank {
     private Unit[] tetromino;
     private int health;
