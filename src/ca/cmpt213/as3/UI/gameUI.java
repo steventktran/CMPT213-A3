@@ -107,7 +107,7 @@ public class gameUI {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception{
 
         try {
 
@@ -115,7 +115,7 @@ public class gameUI {
                 throw new Exception();
             }
 
-            if (args.length == 2 && args[1] != "--cheat") {
+            if (args.length == 2 && !args[1].equals("--cheat")) {
                 throw new Exception();
             }
 
@@ -140,7 +140,7 @@ public class gameUI {
                 //number of tanks is args[0]
                 board = new Board(parseInt(args[0]));
 
-            } else  if (args.length == 2 && args[1] == "--cheat"){
+            } else  if (args[1].equals("--cheat")){
 
                 //number of tanks is args[0]
                 //if args[1] == cheat, call cheat board.
@@ -149,8 +149,7 @@ public class gameUI {
             }
 
         } catch (Exception e){
-
-            System.out.println("Error: Unable to place " + board.getNumTanks() + " tanks.");
+            System.out.println("Error: Unable to place " + args[0] + " tanks.");
             System.out.println("       Try running game again with fewer tanks.");
 
             return;

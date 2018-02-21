@@ -6,7 +6,6 @@ package ca.cmpt213.as3.Logic;
  * takeTurn() method fires damage on tanks and on fortress, and keeps track of whether the game is won.
  * getFinalBoardState() returns a String of the board state.
  */
-
 public class Board {
     private Unit[][] board;
     private Fortress fortress;
@@ -17,49 +16,14 @@ public class Board {
 
     private static final int ROWS = 10;
     private static final int COLS = 10;
-
+    private static final int DEFAULT_NUM_TANKS = 5;
 
     public Board() throws Exception {
-
-        board = new Unit[ROWS][COLS];
-        tanks = new Tank[5];
-
-        numTanksAlive = 5;
-        isCheat = false;
-        fortress = new Fortress();
-
-        boolean isOccupied = false;
-        boolean isVisible = false;
-
-        int x;
-        int y;
-
-        for (int i = 0; i < ROWS; i++) {
-
-            for (int j = 0; j < COLS; j++) {
-
-                board[i][j] = new Unit(isOccupied, isVisible);
-            }
-        }
-
-        for (int i = 0; i < tanks.length; i++) {
-
-            x = (int) (Math.random() * (ROWS - 1));
-            y = (int) (Math.random() * (COLS - 1));
-
-            while (board[x][y].getOccupied()) {
-
-                x = (int) (Math.random() * (ROWS - 1));
-                y = (int) (Math.random() * (COLS - 1));
-            }
-
-            tanks[i] = new Tank(board, x, y);
-        }
+        this(DEFAULT_NUM_TANKS);
     }
 
 
     public Board(int numTanks) throws Exception {
-
         board = new Unit[ROWS][COLS];
         tanks = new Tank[numTanks];
 
@@ -100,46 +64,9 @@ public class Board {
 
 
     public Board(int numTanks, String cheat) throws Exception {
-
-        board = new Unit[ROWS][COLS];
-        tanks = new Tank[numTanks];
-
-        numTanksAlive = numTanks;
-
+        this(numTanks);
         isCheat = true;
-        fortress = new Fortress();
-
-        boolean isOccupied = false;
-        boolean isVisible = false;
-
-        int x;
-        int y;
-
-        for (int i = 0; i < ROWS; i++) {
-
-            for (int j = 0; j < COLS; j++) {
-
-                board[i][j] = new Unit(isOccupied, isVisible);
-            }
-        }
-
-        System.out.println(tanks.length);
-
-        for (int i = 0; i < tanks.length; i++) {
-
-            x = (int) (Math.random() * (ROWS - 1));
-            y = (int) (Math.random() * (COLS - 1));
-
-            while (board[x][y].getOccupied()) {
-
-                x = (int) (Math.random() * (ROWS - 1));
-                y = (int) (Math.random() * (COLS - 1));
-            }
-
-            tanks[i] = new Tank(board, x, y);
-
-        }
-    }
+   }
 
 
     public boolean getIsCheat() {
