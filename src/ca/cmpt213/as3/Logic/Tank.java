@@ -150,6 +150,7 @@ public class Tank {
 
 
     public boolean isDestroyed() {
+
         return isDestroyed;
     }
 
