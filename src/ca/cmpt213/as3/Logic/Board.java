@@ -146,6 +146,19 @@ public class Board {
         return tanks.length;
     }
 
+    public boolean successfullyHit(Unit coordinate) {
+        boolean hits = false;
+
+        //fire at coordinate
+        if (!coordinate.getVisibility()) {
+            coordinate.reveal();
+
+            if (coordinate.getOccupied()) {
+                hits = true;
+            }
+        }
+        return hits;
+    }
 
     public void takeTurn(int row, int col) {
 
@@ -154,7 +167,7 @@ public class Board {
         Unit destination = board[row][col];
 
         //fortress fires at coordinate
-        if (fortress.fire(destination)) {
+        if (successfullyHit(destination)) {
 
             Tank tank = tanks[getTankIndex(row, col)];
             tank.takeDamage();
