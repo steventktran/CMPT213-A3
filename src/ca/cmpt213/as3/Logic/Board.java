@@ -114,12 +114,11 @@ public class Board {
         //enter row and col to find Unit[row][col]
         Unit destination = board[row][col];
         //fortress fires at coordinate
-        if (fortress.fire(destination) == true) {
-            if (tanks[getTankIndex(row, col)].getDamage() > 0) {
-                tanks[getTankIndex(row, col)].takeDamage();
-                if (tanks[getTankIndex(row, col)].getDamage() == 0) {
-                    numTanksAlive--;
-                }
+        if (fortress.fire(destination)) {
+            Tank tank = tanks[getTankIndex(row, col)];
+            tank.takeDamage();
+            if(tank.isDestroyed()) {
+                numTanksAlive--;
             }
         }
         //check if game is over.
@@ -130,27 +129,16 @@ public class Board {
             for (Tank eachTank : tanks) {
                 int damage = eachTank.dealDamage();
                 fortress.takeDamage(damage);
-                //check if game is over.
-                if (isGameOver() == true) {
-                    return;
-                }
             }
         }
     }
 
-    public boolean playerWin() {
-        if (numTanksAlive == 0) {
-            return true;
-        }
-        return false;
+    public boolean isPlayerWin() {
+        return numTanksAlive == 0;
     }
 
-    public boolean tanksWin() {
-        if (getFortressHealth() == 0) {
-            return true;
-        }
-
-        return false;
+    public boolean isTankWin() {
+        return getFortressHealth() == 0;
     }
 
     public boolean getHitStatus(int x, int y) {

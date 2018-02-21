@@ -17,7 +17,7 @@ public class Fortress {
         boolean hits = false;
 
         //fire at coordinate
-        if (coordinate.getVisibility() == false) {
+        if (!coordinate.getVisibility()) {
             coordinate.reveal();
             if (coordinate.getOccupied()) {
                 hits = true;

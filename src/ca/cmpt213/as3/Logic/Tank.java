@@ -124,6 +124,10 @@ public class Tank {
         }
     }
 
+    public boolean isDestroyed() {
+        return isDestroyed;
+    }
+
     public boolean hasUsableSpaces(Unit[][] board) {
         int numUsableSpaces = board.length * board[0].length;
         for (int i = 0; i < board.length; i++) {
