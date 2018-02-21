@@ -1,5 +1,12 @@
 package ca.cmpt213.as3.Logic;
 
+/**
+ * Board.java - keeps track of the one game board with a 2d array of Units called board, a Fortress object and an array of Tank objects.
+ * As each tank gets destroyed, numTanksAlive decrements.
+ * takeTurn() method fires damage on tanks and on fortress, and keeps track of whether the game is won.
+ * getFinalBoardState() returns a String of the board state.
+ */
+
 public class Board {
     private Unit[][] board;
     private Fortress fortress;
