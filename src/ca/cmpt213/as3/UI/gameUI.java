@@ -5,7 +5,11 @@ import ca.cmpt213.as3.Logic.Board;
 import java.util.Scanner;
 import static java.lang.Integer.parseInt;
 
-
+/**
+ * Main class that handles UI of Fortress Defense game. Receives input through the user's keyboard command, makes a move.
+ * It will then print output onto the terminal accordingly, depending on whether or not the game has finished, and if
+ * the player won or the tanks won.
+ */
 public class gameUI {
 
     public static Board board;
@@ -43,13 +47,16 @@ public class gameUI {
 
 
     public static void printIntro() {
-
-        System.out.println( "Starting game with " + board.getNumTanks() + " tanks.");
+        int numTanks = board.getNumTanks();
+        if(numTanks == 1) {
+            System.out.println( "Starting game with " + numTanks + " tank.");
+        } else {
+            System.out.println( "Starting game with " + numTanks + " tanks.");
+        }
         System.out.println( "----------------------------   \n" +
                             "Welcome to Fortress Defense!   \n" +
                             "  By Lora Koo, Steven Tran     \n" +
                             "----------------------------");
-
     }
 
 
@@ -143,7 +150,7 @@ public class gameUI {
 
         } catch (Exception e){
 
-            System.out.println("Error: Unable to place " + args[0] + " tanks.");
+            System.out.println("Error: Unable to place " + board.getNumTanks() + " tanks.");
             System.out.println("       Try running game again with fewer tanks.");
 
             return;
